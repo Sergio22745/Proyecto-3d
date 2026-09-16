@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad de Cundinamarca</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+
+        <img src="img/logo-loading.png" class="logo-loading">
+
+        <div class="spinner"></div>
+
+        <h2>Universidad de Cundinamarca</h2>
+
+        <p>Cargando plataforma...</p>
+
+    </div>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="contenido" style="display: none;">
+
+        <!-- LOGIN -->
+        <div class="card" id="login">
+
+            <div class="header-login">
+
+                <img src="img/logo-login.png" class="logo-login">
+
+                <h2>Universidad de Cundinamarca</h2>
+
+            </div>
+
+            <h3>Iniciar Sesión</h3>
+
+            <input
+                type="email"
+                id="loginCorreo"
+                placeholder="Correo">
+
+            <br>
+
+            <input
+                type="password"
+                id="loginContrasena"
+                placeholder="Contraseña">
+
+            <br>
+
+            <button onclick="iniciarSesion()">
+                Ingresar
+            </button>
+
+            <p onclick="mostrarRegistro()">
+                ¿No tienes cuenta? Registrarse
+            </p>
+
+        </div>
+
+
+        <!-- OPCIONES DE REGISTRO -->
+        <div class="card" id="tipoRegistro" style="display: none;">
+
+            <h2>Opciones de registro</h2>
+
+            <div class="opciones">
+
+                <button onclick="mostrarFormulario()">
+                    Registrarme como Estudiante
+                </button>
+
+                <button onclick="ingresarInvitado()">
+                    Ingresar como Invitado
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <div class="card" id="formulario" style="display: none;">
+
+            <h2>Registro de Estudiante</h2>
+
+            <input
+                type="text"
+                name="nombre"
+                placeholder="Nombre completo">
+
+            <br>
+
+            <input
+                type="email"
+                name="correo"
+                placeholder="Correo">
+
+            <br>
+
+            <input
+                type="password"
+                name="contrasena"
+                placeholder="Contraseña">
+
+            <br>
+
+            <input
+                type="text"
+                name="programa"
+                placeholder="Programa">
+
+            <br>
+
+            <button onclick="registrarEstudiante()">
+                Registrarse
+            </button>
+
+            <button onclick="volverLogin()">
+                Volver
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

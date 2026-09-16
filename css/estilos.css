@@ -1,0 +1,459 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b3d2e;
+}
+
+/* 🔥 LOADER CENTRADO + ANIMACIÓN */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0b3d2e;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    animation: fadeIn 1s ease;
+}
+
+/* LOGO LOADING ANIMADO */
+.logo-loading {
+    width: 260px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.5));
+
+    animation: zoomIn 1.5s ease;
+}
+
+/* LOGO LOGIN */
+.logo-login {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+/* SPINNER */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffffff33;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin: 15px 0;
+}
+
+/* 🔄 ANIMACIONES */
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* CONTENIDO */
+#contenido {
+    display: none;
+    text-align: center;
+
+    /* FONDO VERDE */
+    background: #0b3d2e;
+    min-height: 100vh;
+    padding: 1px 0;
+}
+
+/* 🔥 CARD CON ENTRADA */
+.card {
+    margin: 60px auto;
+    padding: 25px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: fadeIn 1s ease;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    max-width: 260px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+/* 🔥 EFECTO AL ESCRIBIR */
+input:focus {
+    border-color: #0b3d2e;
+    box-shadow: 0 0 8px rgba(11, 61, 46, 0.4);
+    outline: none;
+}
+
+/* BOTONES GENERALES */
+button {
+    width: 100%;
+    max-width: 260px;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* 🔥 BOTÓN LOGIN */
+#login button {
+    background: #0b3d2e;
+}
+
+#login button:hover {
+    background: #145c45;
+    transform: scale(1.05);
+}
+
+/* 🔥 OPCIONES CENTRADAS */
+.opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* 🎓 BOTÓN ESTUDIANTE */
+.opciones button:first-child {
+    background: #0b3d2e;
+}
+
+.opciones button:first-child:hover {
+    background: #1f7a5a;
+    transform: translateY(-3px);
+}
+
+/* 👤 BOTÓN INVITADO */
+.opciones button:last-child {
+    background: #555;
+}
+
+.opciones button:last-child:hover {
+    background: #777;
+    transform: translateY(-3px);
+}
+
+/* TEXTO */
+p {
+    color: #0b3d2e;
+    cursor: pointer;
+}
+
+p:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+MENÚ DEL ESTUDIANTE
+   ================================================== */
+
+/* PANEL PRINCIPAL */
+
+.panel-estudiante {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+ENCABEZADO DORADO
+   ================================================== */
+
+.panel-header {
+    background: #d4af37;
+
+    color: black;
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.panel-header h1 {
+    margin: 0;
+
+    color: black;
+}
+
+.panel-header p {
+    margin: 5px 0 0;
+
+    color: black;
+
+    cursor: default;
+}
+
+
+/* ==================================================
+BOTÓN CERRAR / VOLVER
+   ================================================== */
+
+.btn-salir {
+    width: auto;
+
+    max-width: none;
+
+    background: #0b3d2e;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+}
+
+.btn-salir:hover {
+    background: #145c45;
+
+    transform: scale(1.05);
+}
+
+
+/* ==================================================
+BIENVENIDA
+   ================================================== */
+
+.bienvenida {
+    margin: 25px;
+
+    padding: 20px;
+
+    background: #fffdf3;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.bienvenida h2 {
+    color: black;
+
+    margin-top: 0;
+}
+
+.bienvenida p {
+    color: black;
+
+    cursor: default;
+}
+
+
+/* ==================================================
+TARJETAS DEL MENÚ
+   ================================================== */
+
+.menu-panel {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding: 25px;
+}
+
+
+/* ==================================================
+CADA OPCIÓN ENCASILLADA
+   ================================================== */
+
+.menu-card {
+    background: white;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 12px;
+
+    padding: 25px 15px;
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+
+    transition: all 0.3s ease;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.menu-card:hover {
+    transform: translateY(-5px);
+
+    background: #fffdf3;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+
+    border-color: #b8941f;
+}
+
+
+/* ==================================================
+ICONOS
+   ================================================== */
+
+.menu-icono {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+TÍTULOS DE LAS TARJETAS
+   ================================================== */
+
+.menu-card h3 {
+    color: black;
+
+    margin: 8px 0;
+
+    font-size: 19px;
+}
+
+
+/* ==================================================
+DESCRIPCIONES
+   ================================================== */
+
+.menu-card p {
+    color: #333;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    margin: 5px 0;
+
+    cursor: default;
+}
+
+
+/* ==================================================
+PERFIL
+   ================================================== */
+
+.perfil-card {
+    width: 80%;
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.perfil-icono {
+    font-size: 60px;
+}
+
+.perfil-card h2 {
+    color: black;
+}
+
+.perfil-card p {
+    color: black;
+
+    background: #fffdf3;
+
+    border-radius: 6px;
+
+    padding: 10px;
+
+    cursor: default;
+}
+
+
+/* ==================================================
+RESPONSIVE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+    .menu-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .btn-salir {
+        width: 150px;
+    }
+
+}
+
