@@ -1,7 +1,3 @@
-// ==========================================
-// USUARIO ACTUAL
-// ==========================================
-
 var usuarioActual = null;
 
 
@@ -252,7 +248,7 @@ function mostrarPanelEstudiante(usuario) {
                 '</div>' +
 
 
-                '<div class="menu-card" onclick="mostrarNavegacion3D()">' +
+                '<div class="menu-card" onclick="mostrarNavegacion3DEstudiante()">' +
 
                     '<div class="menu-icono">🗺️</div>' +
 
@@ -356,10 +352,51 @@ function mostrarPerfil(usuario) {
 
 
 // ==========================================
+// NAVEGACIÓN 3D PARA ESTUDIANTE
+// ==========================================
+
+function mostrarNavegacion3DEstudiante() {
+
+    mostrarNavegacion3D("estudiante");
+
+}
+
+
+// ==========================================
+// NAVEGACIÓN 3D PARA INVITADO
+// ==========================================
+
+function mostrarNavegacion3DInvitado() {
+
+    mostrarNavegacion3D("invitado");
+
+}
+
+
+// ==========================================
 // NAVEGACIÓN 3D
 // ==========================================
 
-function mostrarNavegacion3D() {
+function mostrarNavegacion3D(tipoUsuario) {
+
+    var botonVolver = "";
+
+    if (tipoUsuario === "invitado") {
+
+        botonVolver =
+            '<button onclick="volverOpcionesRegistro()" class="btn-salir">' +
+                'Volver' +
+            '</button>';
+
+    } else {
+
+        botonVolver =
+            '<button onclick="mostrarPanelEstudiante(usuarioActual)" class="btn-salir">' +
+                'Volver' +
+            '</button>';
+
+    }
+
 
     document.getElementById("contenido").innerHTML =
 
@@ -375,10 +412,7 @@ function mostrarNavegacion3D() {
 
                 '</div>' +
 
-
-                '<button onclick="mostrarPanelEstudiante(usuarioActual)" class="btn-salir">' +
-                    'Volver' +
-                '</button>' +
+                botonVolver +
 
             '</div>' +
 
@@ -644,25 +678,38 @@ function volverLogin() {
 
 function ingresarInvitado() {
 
-    document.getElementById("contenido").innerHTML =
-
-        '<div class="card">' +
-
-            '<h1>Bienvenido Invitado 👤</h1>' +
-
-            '<p>Acceso limitado al sistema.</p>' +
-
-            '<button onclick="location.reload()">' +
-                'Cerrar sesión' +
-            '</button>' +
-
-        '</div>';
+    mostrarNavegacion3DInvitado();
 
 }
 
 
 // ==========================================
-// MENSAJE DE PRUEBA
+// VOLVER A OPCIONES DE REGISTRO
 // ==========================================
+
+function volverOpcionesRegistro() {
+
+    document.getElementById("contenido").innerHTML =
+
+        '<div class="card" id="tipoRegistro">' +
+
+            '<h2>Opciones de registro</h2>' +
+
+            '<div class="opciones">' +
+
+                '<button onclick="mostrarFormulario()">' +
+                    'Registrarme como Estudiante' +
+                '</button>' +
+
+                '<button onclick="ingresarInvitado()">' +
+                    'Ingresar como Invitado' +
+                '</button>' +
+
+            '</div>' +
+
+        '</div>';
+
+}
+
 
 console.log("SCRIPT NUEVO CARGADO");
